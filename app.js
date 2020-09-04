@@ -57,6 +57,6 @@ app.use(authRoutes);
 app.use("/campgrounds", campgropundsRoutes) 
 app.use("/campgrounds/:id/comments", commentRoutes)
 
-app.listen(9999, process.env.IP, () => {
+app.listen(proces.env.IP || 9999, process.env.IP, () => {
     console.log('server is started')
 });
