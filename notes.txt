@@ -1,0 +1,12 @@
+flush messgaes:
+1- npm i -S connect-flush
+2- in app.js: 
+    - flush = require("connect-flush")
+    - app.use(flush())
+3- add the message key and value in middleware
+    req.flash("error", "Please Login first")
+4- pass the message with res:
+    res.render("login", {message: req.flash("error")})
+5- get the message in ejs file:
+    <h1><%= message %></h1>
+
