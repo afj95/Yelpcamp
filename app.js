@@ -18,7 +18,7 @@ const
       
 // seedDB(); // seed the database
 
-// mongoose.connect('mongodb://localhost/yelp_camp', {
+// mongoose.connect(process.env.DATABASEURL, {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
 //     useFindAndModify: false
@@ -34,6 +34,11 @@ mongoose.connect('mongodb+srv://YelpCamp_User:yalpcampPassword@cluster0.zkhdp.mo
 })
 .then( () => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
+
+// This is called Environment Variable
+// This came from outside of the application
+// it came from the server is running the app
+// console.log(process.env.DATABASEURL);
 
 app.set('view engine', 'ejs') // For .ejs files
 
