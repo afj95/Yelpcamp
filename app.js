@@ -18,7 +18,16 @@ const
       
 // seedDB(); // seed the database
 
-mongoose.connect('mongodb://localhost/yelp_camp', {
+// mongoose.connect('mongodb://localhost/yelp_camp', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+// })
+// .then( () => console.log('Connected to DB!'))
+// .catch(error => console.log(error.message));
+
+mongoose.connect('mongodb+srv://YelpCamp_User:yalpcampPassword@cluster0.zkhdp.mongodb.net/YelpCamp?retryWrites=true&w=majority',
+{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
