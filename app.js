@@ -26,15 +26,6 @@ mongoose.connect(process.env.DATABASEURL, {
 .then( () => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
 
-// mongoose.connect('mongodb+srv://YelpCamp_User:yalpcampPassword@cluster0.zkhdp.mongodb.net/YelpCamp?retryWrites=true&w=majority',
-// {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useFindAndModify: false
-// })
-// .then( () => console.log('Connected to DB!'))
-// .catch(error => console.log(error.message));
-
 // This is called Environment Variable
 // This came from outside of the application
 // it came from the server is running the app
