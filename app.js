@@ -15,7 +15,6 @@ const
     Campground         = require("./models/campground"),
     campgropundsRoutes = require("./routes/campgrounds");
 
-      
 // seedDB(); // seed the database
 
 mongoose.connect(process.env.DATABASEURL, {
@@ -26,13 +25,14 @@ mongoose.connect(process.env.DATABASEURL, {
 .then( () => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
 
+// console.log(process.env.DATABASEURL)
+
 // This is called Environment Variable
 // This came from outside of the application
 // it came from the server is running the app
 console.log(process.env.DATABASEURL);
 
 app.set('view engine', 'ejs') // For .ejs files
-
 app.use(flash())
 
 // PASSPORT Configuration
@@ -51,6 +51,7 @@ app.use(express.static(__dirname + "/public"))
 app.use(methodOverride("_method"))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.json());
 // A way to path a data to all routes
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;

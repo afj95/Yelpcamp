@@ -15,7 +15,9 @@ router.get("/register", (req, res) => {
 
 // handle sign up logic
 router.post("/register", (req, res) => {
+    console.log(req.body)
     var newUser = new User({username: req.body.username})
+    console.log(newUser);
     User.register(newUser, req.body.password, (err, user) => {
         if(err) {
             req.flash("error", err.message)
@@ -23,6 +25,7 @@ router.post("/register", (req, res) => {
         }
         passport.authenticate("local")(req, res, () => {
             req.flash("success", "Welcome to YelpCamp  " + user.username)
+            // res.send("done")
             res.redirect("/campgrounds")
         })
     })
