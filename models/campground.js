@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // SCHEMA SETUP
 // set the schema of the inputs to DB
-const campgroundSchema = new mongoose.Schema({
+const campgroundSchema = mongoose.Schema({
     name: String,
     price: String,
     image: String,
